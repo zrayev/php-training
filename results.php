@@ -4,3 +4,7 @@ function get_dice_results($dice_type, $count) {
     echo "<p> dice " . ($i+1) . " result is "  . rand(1, $dice_type) . "</p><br/>";
   }
 }
+
+function get_single_dice_result($dice_type) {
+  return rand(1, $dice_type);
+}
