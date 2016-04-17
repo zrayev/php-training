@@ -1,0 +1,26 @@
+.dices{
+    width: 60px;
+    height: 60px;
+    background: url("../img/dice.png") no-repeat;
+    display: block;
+    margin: 5px;
+}
+.dice-1{
+    background-position: -300px 0;
+}
+.dice-2{
+    background-position: -240px 0;
+}
+.dice-3{
+    background-position: -180px 0;
+}
+.dice-4{
+    background-position: -120px 0;
+}
+.dice-5{
+    background-position: -60px 0;
+}
+.dice-7{
+    background-position: -360px 0;
+}
+
