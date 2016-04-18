@@ -1,10 +1,11 @@
-<<<<<<< HEAD
 <?php
 //calculation functions
 require_once('results.php');
 
-$dice_type = isset($_GET['facet']) ? $_GET['facet'] : 6;//количество граней куба
-$min_value = isset($_GET['min_value']) ? $_GET['min_value'] : 1;//Минимальное значение для вывода
-$count = isset($_GET['throw']) ? $_GET['throw'] : 0;//Количество бросков
+$options = array(
+  'dice_type' => isset($_POST['facet']) ? $_POST['facet'] : 6,
+  'min_value' => isset($_POST['min_value']) ? $_POST['min_value'] : 1,
+  'count' => isset($_POST['throw']) ? $_POST['throw']: 0,
+);
 
 include_once('main.php');
