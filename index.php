@@ -1,13 +1,9 @@
 <?php
+//calculation functions
 require_once('results.php');
 
-$dice_type = isset($_GET['d']) ? $_GET['d'] : 6;
+$dice_type = isset($_GET['facet']) ? $_GET['facet'] : 6;//количество граней куба
+$min_value = isset($_GET['min_value']) ? $_GET['min_value'] : 1;//Минимальное значение для вывода
+$count = isset($_GET['throw']) ? $_GET['throw'] : 0;//Количество бросков
 
-$count = isset($_GET['count']) ? $_GET['count'] : 7;
-
-$min = isset($_GET['min']) ? $_GET['min'] : 3;
-
-for ($i = 0; $i < $count; $i++) {
-  echo get_single_dice_result($min,$dice_type)."</br>";
-
-}
+include_once('main.php');
