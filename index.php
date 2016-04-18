@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 //calculation functions
 require_once('results.php');
