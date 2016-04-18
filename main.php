@@ -28,12 +28,6 @@
           <input type="number" name="min_value" value="1" min="1" max="6" class="form-control">
         </label>
       </div>
-      <div class="radio">
-        <p>Поставте точку если хотите не выводить результат меньше 3-х</p>
-        <label>
-          <input type="checkbox" id="checkbox" value="option1" name="restriction" value="3">Значение меньше 3х</br></br>
-        </label>
-      </div>
       <div class="btn_center">
         <input type="submit" value="Играть" class="btn btn-danger">
       </div>
@@ -41,7 +35,7 @@
 
     <?php for ($i = 0; $i < $count; $i++): ?>
       <!--Меняем значене класа в зависимоти от возвращаемого значения-->
-      <div class="dice-<?php echo get_single_dice_result($min_value, $dice_type, $restriction); ?> dices"></div><br/>
+      <div class="dice-<?php echo get_single_dice_result($dice_type); ?> dices"></div><br/>
     <?php endfor; ?>
   </div>
 </div>
