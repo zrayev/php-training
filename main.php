@@ -9,40 +9,28 @@
 <body>
 <div class="center">
   <div class="content">
-    <form action="" method="post" role="form">
+    <form action="" method="get" role="form">
       <div class="form-group">
-        <label>
-          <p>Выберите количество граней</p>
-          <input type="number" name="facet" value="1" min="1" max="6"
-                 class="form-control">
-        </label>
+        <label for="inp-facet">Выберите количество граней</label>
+        <input id="inp-facet" type="number" name="facet" value="1" min="1" max="6" class="form-control">
       </div>
       <div class="form-group">
-        <label>
-          <p>Выберите количество бросков кубика</p>
-          <input type="number" name="throw" value="1" min="1" max="20"
-                 class="form-control">
-        </label>
+        <label for="inp-throw">Выберите количество бросков кубика</label>
+        <input id="inp-throw" type="number" name="throw" value="1" min="1" max="20" class="form-control">
       </div>
       <div class="form-group">
-        <label>
-          <p>Меньше какого значения не выводить</p>
-          <input type="number" name="min_value" value="1" min="1" max="6"
-                 class="form-control">
-        </label>
+        <label for="inp-minvalue">Меньше какого значения не выводить</label>
+        <input id="inp-minvalue" type="number" name="min_value" value="1" min="1" max="6" class="form-control">
       </div>
       <div class="btn_center">
         <input type="submit" value="Играть" class="btn btn-danger">
       </div>
     </form>
 
-    <?php $results = get_dice_results($options['dice_type'], $options['count']); ?>
-    <?php foreach ($results as $result): ?>
+    <?php for ($i = 0; $i < $count; $i++): ?>
       <!--Меняем значене класа в зависимоти от возвращаемого значения-->
-      <?php if ($result >= $options['min_value']): ?>
-        <div class="dice-<?php echo $result; ?> dices"></div><br/>
-      <?php endif; ?>
-    <?php endforeach; ?>
+      <div class="dice-<?php echo get_single_dice_result($dice_type); ?> dices"></div><br/>
+    <?php endfor; ?>
   </div>
 </div>
 </body>
