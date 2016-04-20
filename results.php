@@ -5,7 +5,7 @@ function get_single_dice_result($dice_type) {
   return $change;
 }
 
-function get_dice_results($dice_type, $count) {
+function get_dice_results($dice_type, $count, $triger) {
   $results = array();
 
   for($i = 0; $i < $count; $i++) {

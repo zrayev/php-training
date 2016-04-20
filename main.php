@@ -9,7 +9,7 @@
 <body>
 <div class="center">
   <div class="content">
-    <form action="" method="get" role="form">
+    <form action="" method="post" role="form">
       <div class="form-group">
         <label for="inp-facet">Выберите количество граней</label>
         <input id="inp-facet" type="number" name="facet" value="1" min="1" max="6" class="form-control">
@@ -27,10 +27,14 @@
       </div>
     </form>
 
-    <?php for ($i = 0; $i < $count; $i++): ?>
+    <?php $results = get_dice_results($options['dice_type'], $options['count']); ?>
+    <?php foreach ($results as $result): ?>
       <!--Меняем значене класа в зависимоти от возвращаемого значения-->
-      <div class="dice-<?php echo get_single_dice_result($dice_type); ?> dices"></div><br/>
-    <?php endfor; ?>
+      <?php if ($result >= $options['min_value']): ?>
+        <div class="dice-<?php echo $result; ?> dices"></div><br/>
+      <?php endif; ?>
+    <?php endforeach; ?>
+
   </div>
 </div>
 </body>
