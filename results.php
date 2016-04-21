@@ -1,16 +1,23 @@
 <?php
 
-function get_single_dice_result($dice_type) {
-  $change = rand(1, $dice_type);
-  return $change;
-}
-
-function get_dice_results($dice_type, $count, $triger) {
+function get_dice_results($dice_type, $count) {
   $results = array();
-
   for($i = 0; $i < $count; $i++) {
     $results[] = rand(1, $dice_type);
   }
-
   return $results;
 }
+
+ function filter_wrapper($dice_type, $count, $trigger) {
+   $results = get_dice_results($dice_type, $count);
+   if($trigger == 1) {
+     sort($results);
+     return $results;
+   }
+   elseif($trigger == 2) {
+     rsort($results);
+     return $results;
+   } else{
+     return $results;
+   }
+ }

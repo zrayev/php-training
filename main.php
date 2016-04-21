@@ -27,7 +27,7 @@
       </div>
     </form>
 
-    <?php $results = get_dice_results($options['dice_type'], $options['count']); ?>
+    <?php $results = filter_wrapper($options['dice_type'], $options['count'], $options['trigger']); ?>
     <?php foreach ($results as $result): ?>
       <!--Меняем значене класа в зависимоти от возвращаемого значения-->
       <?php if ($result >= $options['min_value']): ?>
