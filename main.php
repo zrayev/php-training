@@ -44,8 +44,6 @@
         <input type="submit" value="Играть" class="btn btn-danger">
       </div>
     </form>
-
-<<<<<<< HEAD
     <?php $results = filter_wrapper($options['dice_type'], $options['count'], $options['trigger']); ?>
     <?php foreach ($results as $result): ?>
       <!--Меняем значене класа в зависимоти от возвращаемого значения-->
@@ -54,8 +52,7 @@
       <?php endif; ?>
     <?php endforeach; ?>
 
-=======
->>>>>>> origin/front_team
+
   </div>
 </div>
 </body>
