@@ -9,4 +9,8 @@ $options = array(
     'trigger' => isset($_POST['trigger']) ? $_POST['trigger'] : 0,
 );
 
-include_once('main.php');
+if(!empty($_POST)) {
+  include_once('show_results.php');
+} else {
+  include_once('main.php');
+}

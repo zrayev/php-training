@@ -9,7 +9,7 @@
 <body>
 <div class="center">
   <div class="content">
-    <form action="show_results.php" method="post" role="form">
+    <form action="" method="post" role="form">
       <div class="form-group">
         <label for="inp-facet">Выберите количество граней</label>
         <input id="inp-facet" type="number" name="facet" value="1" min="1" max="6" class="form-control">
@@ -17,11 +17,6 @@
       <div class="form-group">
         <label for="inp-throw">Выберите количество бросков кубика</label>
         <input id="inp-throw" type="number" name="throw" value="1" min="1" max="20" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="inp-minvalue">Меньше какого значения не выводить</label>
-        <input id="inp-minvalue" type="number" name="min_value" value="1" min="1" max="6" class="form-control">
       </div>
 
       <div class="form-group">
@@ -51,8 +46,6 @@
         <div class="dice-<?php echo $result; ?> dices"></div><br/>
       <?php endif; ?>
     <?php endforeach; ?>
-
-
   </div>
 </div>
 </body>
