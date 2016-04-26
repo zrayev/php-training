@@ -8,28 +8,28 @@ function get_dice_results($dice_type, $count, $sign, $filter_param)
     switch ($sign) {
         case ">":
             for ($i = 0; $i < $count; $i++) {
-                if ($results[$i] < $filter_param) {
+                if ($results[$i] <= $filter_param) {
                     unset($results[$i]);
                 }
             }
             break;
         case ">=":
             for ($i = 0; $i < $count; $i++) {
-                if ($results[$i] <= $filter_param) {
+                if ($results[$i] < $filter_param) {
                     unset($results[$i]);
                 }
             }
             break;
         case "<":
             for ($i = 0; $i < $count; $i++) {
-                if ($results[$i] > $filter_param) {
+                if ($results[$i] >= $filter_param) {
                     unset($results[$i]);
                 }
             }
             break;
         case "<=":
             for ($i = 0; $i < $count; $i++) {
-                if ($results[$i] >= $filter_param) {
+                if ($results[$i] > $filter_param) {
                     unset($results[$i]);
                 }
             }
