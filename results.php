@@ -83,7 +83,11 @@ function parser($command_parser)
             $filter_param = "6";
             $trigger = '';
         } else {
-            $sign = $elements[4];
+            if (($elements[4] == ">") || ($elements[4] == ">=") || ($elements[4] == "<") || ($elements[4] == "<=") || ($elements[4] == "=")) {
+                $sign = $elements[4];
+            } else {
+                throw new Exception('Задайте правильний знак!');
+            }
             if (is_numeric($elements[5])) {
                 $filter_param = $elements[5];
             } else {
