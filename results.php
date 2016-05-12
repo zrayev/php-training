@@ -83,21 +83,30 @@ function parser($command_parser)
       $sign = "<";
       $filter_param = "6";
       $trigger = "";
+
     } else {
-      if (($elements[4] == ">") || ($elements[4] == ">=") || ($elements[4] == "<") || ($elements[4] == "<=") || ($elements[4] == "=")) {
-        $sign = $elements[4];
+      if ($elements[3] == "sort") {
+        $sign = "<";
+        $filter_param = "6";
+        $trigger = $elements[4];
+
       } else {
-        throw new Exception("Задайте правильний знак!");
-      }
-      if (is_numeric($elements[5])) {
-        $filter_param = $elements[5];
-      } else {
-        throw new Exception("Задайте параметр для фільтру!");
-      }
-      if (empty($elements[6]) == false) {
-        $trigger = $elements[7];
-      } else {
-        $trigger = "";
+
+        if (($elements[4] == ">") || ($elements[4] == ">=") || ($elements[4] == "<") || ($elements[4] == "<=") || ($elements[4] == "=")) {
+          $sign = $elements[4];
+        } else {
+          throw new Exception("Задайте правильний знак!");
+        }
+        if (is_numeric($elements[5])) {
+          $filter_param = $elements[5];
+        } else {
+          throw new Exception("Задайте параметр для фільтру!");
+        }
+        if (empty($elements[6]) == false) {
+          $trigger = $elements[7];
+        } else {
+          $trigger = "";
+        }
       }
     }
   } else {
